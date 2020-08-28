@@ -34,6 +34,11 @@ const isValid = R.curry(
     }
 );
 
+const getAppInfo = xmlNode =>
+    getGitHubProject(xmlNode) + ','
+    +contentOfAdded(xmlNode) + ','
+    +contentOfUpdated(xmlNode);
+
 module.exports = {
     isValid,
     elementsToArray,
@@ -41,6 +46,7 @@ module.exports = {
     contentOfSource,
     contentOfID,
     contentOfAdded,
-    contentOfUpdated
+    contentOfUpdated,
+    getAppInfo
 
 };
